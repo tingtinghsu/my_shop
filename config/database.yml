@@ -23,7 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: my_store_development
+  database: my_store
+  username: 
+  password:
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -32,7 +34,7 @@ development:
   #username: my_store
 
   # The password associated with the postgres role (username).
-  #password:
+  # password: 1234
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -81,5 +83,5 @@ test:
 production:
   <<: *default
   database: my_store_production
-  username: my_store
-  password: <%= ENV['MY_STORE_DATABASE_PASSWORD'] %>
+  # username: my_store
+  # password: <%= ENV['MY_STORE_DATABASE_PASSWORD'] %>
